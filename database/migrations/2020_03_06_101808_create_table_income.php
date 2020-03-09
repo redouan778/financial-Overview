@@ -20,8 +20,8 @@ class CreateTableIncome extends Migration
             $table->text('title');
             $table->text('description');
             $table->enum('category', ['general', 'loaning'])->default('general');
-            $table->text('img');
-
+            $table->string('img')->nullable();
+//            $table->string('avatar')->default('image/default-user-profile.png');
 
             $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();

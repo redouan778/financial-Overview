@@ -18,11 +18,11 @@
                                     <h5 class="card-title">{{$product->title}}</h5>
                                     <p class="card-text">{{$product->description}}</p>
                                     <p class="card-text">€ {{$product->category}}</p>
-                                    <p class="card-title">
-                                        {{$product->img}}
-                                        {{asset('storage/file.txt')}}
-                                    </p>
-
+{{--                                    @if($product->img)--}}
+                                        <img src="/{{ $product->img }}" style="height: 70px; width: 70px; ">
+{{--                                    @else--}}
+{{--                                        <img src="/image/default-user-profile.png" style="height: 70px; width: 70px; ">--}}
+{{--                                    @endif--}}
                                 </div>
                             </div>
                         @endforeach

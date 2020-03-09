@@ -3,7 +3,7 @@
     <div class="container">
         <div class="panel panel-default">
             <div class="panel-heading">
-                <form action="{{route('incomes.store')}}" method="POST" class="form-horizontal">
+                <form action="{{route('incomes.store')}}" enctype="multipart/form-data"   method="POST" class="form-horizontal">
                     {{ csrf_field() }}
                     <div class="form-group">
                         <label for="naam"  class="col-sm-2 control-label">Amount</label>
@@ -23,7 +23,11 @@
 
                         <label for="naam"  class="col-sm-2 control-label">Category</label>
                         <div class="col-sm-6">
-                            <input type="text" name="category" class="form-control" placeholder="Category name">
+
+                        <select name="category">
+                            <option value="general">general</option>
+                            <option value="loaning">loaning</option>
+                        </select>
                         </div>
 
                         <label for="naam"  class="col-sm-2 control-label">image</label>
