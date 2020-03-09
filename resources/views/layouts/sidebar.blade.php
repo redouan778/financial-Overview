@@ -7,7 +7,14 @@
         <ul class="nav sidebar-nav">
             <div class="sidebar-header">
                 <div class="sidebar-brand">
-                    <a href="#">Brand</a></div></div>
+{{--{{dd(Auth::user()->profile_img)}}--}}
+                    @if(isset(Auth::user()->profile_img))
+                        <img src="{{Auth::user()->profile_img}}" alt="">
+                    @else
+                        <img src="/image/default-user-profile.png" style="height: 70px; width: 70px; ">
+                    @endif
+                </div>
+            </div>
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#events">Events</a></li>

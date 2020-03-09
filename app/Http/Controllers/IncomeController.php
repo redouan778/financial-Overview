@@ -36,38 +36,41 @@ class IncomeController extends Controller
 
     /**
      * @param Request $request
-     * @return \Illuminate\Http\RedirectResponse
-     * @throws \Illuminate\Validation\ValidationException
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector|string
      */
     public function store(Request $request)
     {
         $this->validate($request,[
-            'img' => 'required|img|mimes:jpeg,png,jpg,gif|max:2048'
+            'amount' => 'required',
+            'title' => 'required',
+            'description' => 'required',
+            'category' => 'required',
+            'img' => ''
         ]);
-        dd('dd');
 
         $category = new Income([
             'amount' => $request->get('amount'),
             'title' => $request->get('title'),
+            'user_id' => Auth::id(),
             'description' => $request->get('description'),
             'category' => $request->get('category'),
             'img' => $request->get('img'),
-            'user_id' => Auth::id(),
-
         ]);
 
-dd($category->amount);
 
-        $category->image = $request->image;
-        if($category->image){
+        $category->img = $request->img;
+
+        if($category->img){
             try {
-                $filePath = $this->UserImageUpload($category->image); //Passing $data->image as parameter to our created method
-                $category->image = $filePath;
+                $filePath = $this->UserImageUpload($category->img); //Passing $data->image as parameter to our created method
+                $category->img = $filePath;
                 $category->save();
+
                 return redirect('/');
 
             } catch (Exception $e) {
-                //Write your error message here
+
+                return 'asd';
             }
         }
     }
