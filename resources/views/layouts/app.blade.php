@@ -16,7 +16,8 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
-
+{{--    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">--}}
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/income.css') }}" rel="stylesheet">
@@ -64,6 +65,13 @@
                                         {{ __('Logout') }}
                                     </a>
 
+                                    <a class="dropdown-item" href="{{ route('profile') }}"
+                                     >
+                                        <i class="fa fa-btn fa-user ">
+                                        {{ __('Profile') }}
+                                        </i>
+                                    </a>
+
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf
                                     </form>
@@ -77,9 +85,7 @@
 
         @yield('sidebar')
 
-
         <main class="py-4">
-            @yield('content')
             @if (count($errors) > 0)
                 <div class="alert alert-danger">
                     <ul>
@@ -90,6 +96,11 @@
                 </div>
             @endif
 
+                @yield('content')
+
+                <button class="btn btn-primary">
+                <a class="back" href="{{route('/')}}" style="color: white">  Vorige pagina</a>
+            </button>
         </main>
     </div>
 </body>

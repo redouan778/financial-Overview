@@ -13,12 +13,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 //
-//Route::get('/', function () {
-//    return view('welcome');
-//})->name('/');
 
 Auth::routes();
 
 Route::resource('incomes', 'IncomeController');
 
 Route::get('/', 'IncomeController@index')->name('/');
+
+Route::get('profile', 'UserController@profile')->name('profile');
+Route::post('profile', 'UserController@update_avatar')->name('update_profile');

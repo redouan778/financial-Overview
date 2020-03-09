@@ -43,9 +43,6 @@
                         </div>
                     </div>
 
-                    <button class="btn btn-primary">
-                        <i class="fa fa-backward"><a class="back" href="{{route('/')}}" style="color: white">  Vorige pagina</a></i>
-                    </button>
                 </form>
             </div>
         </div>

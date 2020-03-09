@@ -339,3 +339,14 @@ a[href*="#followme"]::before {
 /*            Overlay            */
 /*-------------------------------*/
 
+.empty{
+    padding-top: 60px;
+}
+
+.add_button{
+    color: white;
+}
+
+#add_button{
+    float: right;
+ }
