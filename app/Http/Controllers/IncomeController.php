@@ -8,6 +8,7 @@ use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use App\Traits\ImageUpload;
+use Carbon\Carbon;
 
 
 class IncomeController extends Controller
@@ -21,9 +22,12 @@ class IncomeController extends Controller
      */
     public function index(Income $income)
     {
-        $r = Income::take(10)->get();
+        $general = Income::where('Category', 'General')->get();
+        $loaning = Income::where('Category', 'Loaning')->get();
+        $reminder = Income::where('Category', 'Reminder')->get();
 
-        return view('income.index', compact('r'));
+
+        return view('income.index', compact('general',  'loaning', 'reminder'));
     }
 
     /**
@@ -40,6 +44,10 @@ class IncomeController extends Controller
      */
     public function store(Request $request)
     {
+
+        $carbon = new Carbon('now');
+
+
         $this->validate($request,[
             'amount' => 'required',
             'title' => 'required',
@@ -53,6 +61,7 @@ class IncomeController extends Controller
             'user_id' => Auth::id(),
             'description' => $request->get('description'),
             'category' => $request->get('category'),
+            'date' =>  $carbon->format('y-m-d')
         ]);
 
 
@@ -111,10 +120,13 @@ class IncomeController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  \App\Income  $income
-     * @return Response
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-    public function destroy(Income $income)
+    public function destroy($id)
     {
-        //
+        $address = Income::find($id);
+        $address->delete();
+
+        return redirect('/');
     }
 }

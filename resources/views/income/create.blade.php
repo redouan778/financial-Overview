@@ -38,6 +38,6 @@
                     </div>
                 </form>
             </div>
-        </div>g      
+        </div>
     </div>
 @endsection
