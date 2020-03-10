@@ -98,7 +98,7 @@
 
                 @yield('content')
 
-                <button class="btn btn-primary">
+                <button class="btn previous-button btn-primary">
                 <a class="back" href="{{route('/')}}" style="color: white">  Vorige pagina</a>
             </button>
         </main>

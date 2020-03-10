@@ -8,7 +8,7 @@
                     <div class="form-group">
                         <label for="naam"  class="col-sm-2 control-label">Amount</label>
                         <div class="col-sm-6">
-                            <input type="text"  name="amount" class="form-control" placeholder="Category name">
+                            <input type="number"  name="amount" class="form-control" placeholder="Category name">
                         </div>
 
                         <label for="naam"  class="col-sm-2 control-label">title</label>
@@ -24,17 +24,11 @@
                         <label for="naam"  class="col-sm-2 control-label">Category</label>
                         <div class="col-sm-6">
 
-                        <select name="category">
-                            <option value="general">general</option>
-                            <option value="loaning">loaning</option>
-                        </select>
+                            <select name="category">
+                                <option value="general">general</option>
+                                <option value="loaning">loaning</option>
+                            </select>
                         </div>
-
-                        <label for="naam"  class="col-sm-2 control-label">image</label>
-                        <div class="col-sm-6">
-                            <input type="file" name="img" class="form-control" placeholder="Category name">
-                        </div>
-
                     </div>
 
                     <div class="form-group">
@@ -42,7 +36,6 @@
                             <button type="submit" class="btn btn-primary"><i class="fa fa-plus"></i>Add product</button>
                         </div>
                     </div>
-
                 </form>
             </div>
         </div>

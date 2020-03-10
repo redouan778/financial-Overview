@@ -349,4 +349,9 @@ a[href*="#followme"]::before {
 
 #add_button{
     float: right;
- }
+}
+.previous-button{
+    /*float: right;*/
+    margin-left: 35.8%;
+    margin-top: 5%;
+}

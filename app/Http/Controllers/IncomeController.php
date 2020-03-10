@@ -45,7 +45,6 @@ class IncomeController extends Controller
             'title' => 'required',
             'description' => 'required',
             'category' => 'required',
-            'img' => ''
         ]);
 
         $category = new Income([
@@ -54,25 +53,24 @@ class IncomeController extends Controller
             'user_id' => Auth::id(),
             'description' => $request->get('description'),
             'category' => $request->get('category'),
-            'img' => $request->get('img'),
         ]);
 
 
-        $category->img = $request->img;
-
-        if($category->img){
-            try {
-                $filePath = $this->UserImageUpload($category->img); //Passing $data->image as parameter to our created method
-                $category->img = $filePath;
+//        $category->img = $request->img;
+//
+//        if($category->img){
+//            try {
+//                $filePath = $this->UserImageUpload($category->img); //Passing $data->image as parameter to our created method
+//                $category->img = $filePath;
                 $category->save();
 
                 return redirect('/');
-
-            } catch (Exception $e) {
-
-                return 'asd';
-            }
-        }
+//
+//            } catch (Exception $e) {
+//
+//                return 'asd';
+//            }
+//        }
     }
 
     /**
