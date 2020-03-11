@@ -569,3 +569,12 @@ h2 a {
     text-transform: uppercase;
     margin-top: 3%;
 }
+
+
+.hamburger.is-closed .hamb-top, .hamburger.is-closed .hamb-middle, .hamburger.is-closed .hamb-bottom {
+    background-color: white;
+}
+
+.hamburger.is-open .hamb-top, .hamburger.is-open .hamb-middle, .hamburger.is-open .hamb-bottom {
+     background-color: white;
+ }

@@ -42,10 +42,9 @@
                                     <form action="{{route('incomes.destroy', $product->id)}}" id="delete" method="post">
                                         {{ csrf_field() }}
                                         {{ method_field('DELETE') }}
-                                        <button class="btn btn-danger">
-                                            <a class="delete" onclick="document.getElementById('delete').submit();">delete</a>
-                                        </button>
+                                            <a class="delete fa fa-edit" onclick="document.getElementById('delete').submit();"></a>
                                     </form>
+
                                 </td>
                             </tr>
                         @endforeach
@@ -87,9 +86,8 @@
 {{--                                                <a class="delete" onclick="document.getElementById('delete').submit();">--}}
 {{--                                                    <i class="fa fa-trash-o text-danger"> </i>--}}
 {{--                                                </a>--}}
-                                        <button class="btn btn-danger">
-                                        <a class="delete" onclick="document.getElementById('delete').submit();">delete</a>
-                                        </button>
+                                        <a class="delete fa fa-edit" onclick="document.getElementById('delete').submit();"></a>
+
                                     </form>
                                 </td>
                             </tr>
@@ -126,9 +124,8 @@
                                 <form action="{{route('incomes.destroy', $product->id)}}" id="delete" method="post">
                                     {{ csrf_field() }}
                                     {{ method_field('DELETE') }}
-                                    <button class="btn btn-danger">
-                                        <a class="delete" onclick="document.getElementById('delete').submit();">delete</a>
-                                    </button>
+                                    <a class="delete fa fa-edit" onclick="submit"></a>
+
                                 </form>
                             </td>
                         </tr>

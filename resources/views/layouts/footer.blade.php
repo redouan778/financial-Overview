@@ -67,13 +67,7 @@
 
         <div class="row text-center"> © 2020. Made by Redouan.</div>
     </div>
-
-
 </footer>
-
-
-
-
 <script src="js/jquery-3.1.1.js"></script>
 <script src="js/bootstrap.js"></script>
 </body>
