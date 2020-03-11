@@ -26,7 +26,6 @@ class IncomeController extends Controller
         $loaning = Income::where('Category', 'Loaning')->get();
         $reminder = Income::where('Category', 'Reminder')->get();
 
-
         return view('income.index', compact('general',  'loaning', 'reminder'));
     }
 

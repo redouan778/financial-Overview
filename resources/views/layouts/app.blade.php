@@ -14,6 +14,8 @@
     <script src="{{ asset('js/income.js') }}" defer></script>
 
     <!-- Fonts -->
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
 {{--    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">--}}
@@ -25,19 +27,14 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+
+        <nav class="navbar navbar-expand-md navbar-light bg-primary shadow-sm">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-
+                        <img src="image/money-logo.jpg" alt="Logo" style="width: 80px; height: 80px">
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -83,9 +80,16 @@
             </div>
         </nav>
 
-        @yield('sidebar')
 
+
+
+
+
+
+            @yield('sidebar')
         <main class="py-4">
+            <div  class="container">
+
             @if (count($errors) > 0)
                 <div class="alert alert-danger">
                     <ul>
@@ -96,12 +100,14 @@
                 </div>
             @endif
 
-                @yield('content')
+            @yield('content')
 
                 <button class="btn previous-button btn-primary">
-                <a class="back" href="{{route('/')}}" style="color: white">  Vorige pagina</a>
-            </button>
+                    <a class="back" href="{{route('/')}}" style="color: white">  Vorige pagina</a>
+                </button>
+            </div>
         </main>
+        @yield('footer')
     </div>
 </body>
 </html>

@@ -23,10 +23,10 @@
 
                         <label for="naam"  class="col-sm-2 control-label">Category</label>
                         <div class="col-sm-6">
-
                             <select name="category">
-                                <option value="general">general</option>
-                                <option value="loaning">loaning</option>
+                                <option value="general">General</option>
+                                <option value="loaning">Loaning</option>
+                                <option value="reminder">Reminder</option>
                             </select>
                         </div>
                     </div>

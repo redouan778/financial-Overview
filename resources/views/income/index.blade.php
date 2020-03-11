@@ -1,28 +1,44 @@
 @extends('layouts.app')
 @extends('layouts.sidebar')
+@extends('layouts.footer')
 
 @section('content')
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header">homepage
-                        @guest
-                        @else
-                            <button id="add_button" class="btn btn-primary">
-                                <a class="add_button" href="{{route('incomes.create')}}">+ Add income</a>
-                            </button>
-                        @endif
-                    </div>
-                    <div class="card-body">
+
+
+        <h1><span class="blue">&lt;</span>Financial<span class="blue">&gt;</span><span class="yellow">Overview
+        @guest
+        @else
+            <button id="add_button" class="btn btn-primary">
+                        <a class="add_button" href="{{route('incomes.create')}}">+ Add income</a>
+                    </button>
+        @endif
+        </span></h1>
+
+            <table class="container">
+                <div class="container table-header">General</div>
+                <thead>
+                    <tr>
+                        <th><h1>Price</h1></th>
+                        <th><h1>Title</h1></th>
+                        <th><h1>Description</h1></th>
+                        <th><h1>Category</h1></th>
+                        <th><h1>Date</h1></th>
+                        <th><h1>Settings</h1></th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    @if($general->count() == 0)
+                        <p>Column General is empty</p>
+                    @else
                         @foreach ($general as $product)
-                            <div class="card" style="width: 18rem;" >
-                                <div class="card-body">
-                                    <h5 class="card-title"><b>Price:</b> €{{$product->amount}}</h5>
-                                    <h5 class="card-title"><b>Title:</b>{{$product->title}}</h5>
-                                    <p class="card-text"><b>Description:</b>{{$product->description}}</p>
-                                    <p class="card-text"><b>Category:</b> {{$product->category}}</p>
-                                    <p class="card-text"><b>Date:</b> {{$product->date->format('d-m-yy')}}</p>
+                            <tr>
+                                <td >€ {{$product->amount}}</td>
+                                <td maxlength="4" class="text-white">{{$product->title}}</td>
+                                <td maxlength="4" class="text-white">{{$product->description}}</td>
+                                <td class="text-white">{{$product->category}}</td>
+                                <td class="text-white"> {{$product->date->format('d-m-yy')}}</td>
+                                <td class="text-white">
                                     <form action="{{route('incomes.destroy', $product->id)}}" id="delete" method="post">
                                         {{ csrf_field() }}
                                         {{ method_field('DELETE') }}
@@ -30,73 +46,95 @@
                                             <a class="delete" onclick="document.getElementById('delete').submit();">delete</a>
                                         </button>
                                     </form>
-                                </div>
-                            </div>
+                                </td>
+                            </tr>
                         @endforeach
-                    </div>
-                </div>
+                    @endif
+                </tbody>
+            </table>
 
-                <div class="card">
-                    <div class="card-header">
-                        <h3>Loaning</h3>
-                    </div>
-                    <div class="card-body">
-                        @if(!isset($loaning))
-                            <p>You dont have Reminders!</p>
-                        @else
+            <table class="container">
+                <div class="container table-header">Loaning</div>
+                <thead>
+                    <tr>
+                        <th><h1>Price</h1></th>
+                        <th><h1>Title</h1></th>
+                        <th><h1>Description</h1></th>
+                        <th><h1>Category</h1></th>
+                        <th><h1>Date</h1></th>
+                        <th><h1>Settings</h1></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if($loaning->count() == 0)
+                        <tr>
+                            <td>Column Loaning is empty</td>
+
+                        </tr>
+
+                    @else
                         @foreach ($loaning as $product)
-                            <div class="card" style="width: 18rem;" >
-                                <div class="card-body">
-                                    <h5 class="card-title"><b>Price:</b> €{{$product->amount}}</h5>
-                                    <h5 class="card-title"><b>Title:</b>{{$product->title}}</h5>
-                                    <p class="card-text"><b>Description:</b>{{$product->description}}</p>
-                                    <p class="card-text"><b>Category:</b> {{$product->category}}</p>
-                                    <p class="card-text"><b>Date:</b> {{$product->date->format('d-m-yy')}}</p>
+                            <tr>
+                                <td >€ {{$product->amount}}</td>
+                                <td class="text-white">{{$product->title}}</td>
+                                <td class="text-white">{{$product->description}}</td>
+                                <td class="text-white">{{$product->category}}</td>
+                                <td class="text-white"> {{$product->date->format('d-m-yy')}}</td>
+                                <td class="text-white">
                                     <form action="{{route('incomes.destroy', $product->id)}}" id="delete" method="post">
                                         {{ csrf_field() }}
                                         {{ method_field('DELETE') }}
+{{--                                                <a class="delete" onclick="document.getElementById('delete').submit();">--}}
+{{--                                                    <i class="fa fa-trash-o text-danger"> </i>--}}
+{{--                                                </a>--}}
                                         <button class="btn btn-danger">
-                                            <a class="delete" onclick="document.getElementById('delete').submit();">delete</a>
+                                        <a class="delete" onclick="document.getElementById('delete').submit();">delete</a>
                                         </button>
                                     </form>
-                                </div>
-                            </div>
+                                </td>
+                            </tr>
                         @endforeach
-                        @endif
-                    </div>
-                </div>
+                    @endif
+                </tbody>
+            </table>
 
-                <div class="card">
-                    <div class="card-header">
-                        <h3>Reminders</h3>
-                    </div>
-                    <div class="card-body">
-                        d
-                        @if(isset($reminder))
-                            <p>You dont have Reminders!</p>
-                        @else
-                            @foreach ($reminder  as $product)
-                                <div class="card" style="width: 18rem;" >
-                                <div class="card-body">
-                                    <h5 class="card-title"><b>Price:</b> €{{$product->amount}}</h5>
-                                    <h5 class="card-title"><b>Title:</b>{{$product->title}}</h5>
-                                    <p class="card-text"><b>Description:</b>{{$product->description}}</p>
-                                    <p class="card-text"><b>Category:</b> {{$product->category}}</p>
-                                    <p class="card-text"><b>Date:</b> {{$product->date->format('d-m-yy')}}</p>
-                                    <form action="{{route('incomes.destroy', $product->id)}}" id="delete" method="post">
-                                        {{ csrf_field() }}
-                                        {{ method_field('DELETE') }}
-                                        <button class="btn btn-danger">
-                                            <a class="delete" onclick="document.getElementById('delete').submit();">delete</a>
-                                        </button>
-                                    </form>
-                                </div>
-                            </div>
-                        @endforeach
-                        @endif
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+            <table class="container">
+                <div class="container table-header">Reminder</div>
+                <thead>
+                    <tr>
+                        <th><h1>Price</h1></th>
+                        <th><h1>Title</h1></th>
+                        <th><h1>Description</h1></th>
+                        <th><h1>Category</h1></th>
+                        <th><h1>Date</h1></th>
+                        <th><h1>Settings</h1></th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                @if($reminder->count() == 0)
+                    <p>Column Reminder is empty</p>
+                @else
+                    @foreach ($reminder as $product)
+                        <tr>
+                            <td >€ {{$product->amount}}</td>
+                            <td class="text-white">{{$product->title}}</td>
+                            <td class="text-white">{{$product->description}}</td>
+                            <td class="text-white">{{$product->category}}</td>
+                            <td class="text-white"> {{$product->date->format('d-m-yy')}}</td>
+                            <td class="text-white">
+                                <form action="{{route('incomes.destroy', $product->id)}}" id="delete" method="post">
+                                    {{ csrf_field() }}
+                                    {{ method_field('DELETE') }}
+                                    <button class="btn btn-danger">
+                                        <a class="delete" onclick="document.getElementById('delete').submit();">delete</a>
+                                    </button>
+                                </form>
+                            </td>
+                        </tr>
+
+                    @endforeach
+                @endif
+                </tbody>
+            </table>
 @endsection
