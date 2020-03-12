@@ -3,7 +3,6 @@ body {
     overflow-x: hidden;
     /*background-image: url("image/bg.jpg");*/
     background-image: url('../image/bg.jpg');
-
 }
 body,
 html { height: 100%;}
@@ -175,7 +174,6 @@ html { height: 100%;}
 /*Fontawesome icons*/
 .nav.sidebar-nav li a::before {
     font-family: fontawesome;
-    content: "\f12e";
     vertical-align: baseline;
     display: inline-block;
     padding-right: 5px;
@@ -350,10 +348,10 @@ a[href*="#followme"]::before {
 }
 
 #add_button{
-    float: right;
+    /*float: right;*/
+    /*display: inline-block;*/
 }
 .previous-button{
-
     margin-top: 5%;
 }
 
@@ -506,7 +504,7 @@ h2 a {
     padding: 15px 11px;}
 
 .form-control{
-    border-color:#fff;
+    border-color:darkgray;
     border-radius:0px;
     background-color:transparent;
 }
@@ -578,3 +576,27 @@ h2 a {
 .hamburger.is-open .hamb-top, .hamburger.is-open .hamb-middle, .hamburger.is-open .hamb-bottom {
      background-color: white;
  }
+
+
+@media (min-width: 768px) {
+
+    .lrv-side-bar {
+        background: red;
+        display: none !important;
+    }
+}
+
+@media (max-width: 767px) {
+    .lrv-bar{
+        display: none;
+        background: red;
+    }
+}
+
+@media (max-width: 446px) {
+    .add{
+        font-size: 0.65em;
+    }
+}
+
+

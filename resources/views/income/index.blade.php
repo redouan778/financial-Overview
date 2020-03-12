@@ -3,16 +3,16 @@
 @extends('layouts.footer')
 
 @section('content')
+    <div class="add">
+       <h1><span class="blue">&lt;</span>Financial<span class="blue">&gt; </span><span class="yellow">Overview</span></h1>
+    </div>
+           @guest
+           @else
+               <button id="add_button" class="btn btn-primary">
+                   <a class="add_button" href="{{route('incomes.create')}}">+ Add income</a>
+               </button>
+           @endif
 
-
-        <h1><span class="blue">&lt;</span>Financial<span class="blue">&gt;</span><span class="yellow">Overview
-        @guest
-        @else
-            <button id="add_button" class="btn btn-primary">
-                        <a class="add_button" href="{{route('incomes.create')}}">+ Add income</a>
-                    </button>
-        @endif
-        </span></h1>
 
             <table class="container">
                 <div class="container table-header">General</div>
@@ -23,7 +23,7 @@
                         <th><h1>Description</h1></th>
                         <th><h1>Category</h1></th>
                         <th><h1>Date</h1></th>
-                        <th><h1>Settings</h1></th>
+                        <th><h1>Options</h1></th>
                     </tr>
                 </thead>
 
@@ -33,7 +33,7 @@
                     @else
                         @foreach ($general as $product)
                             <tr>
-                                <td >€ {{$product->amount}}</td>
+                                <td >€ {{$product->amount}},-</td>
                                 <td maxlength="4" class="text-white">{{$product->title}}</td>
                                 <td maxlength="4" class="text-white">{{$product->description}}</td>
                                 <td class="text-white">{{$product->category}}</td>

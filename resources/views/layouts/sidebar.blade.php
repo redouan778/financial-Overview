@@ -20,6 +20,20 @@
                 <li><a href="#about">Incomes</a></li>
                 <li><a href="#events">Loanings</a></li>
                 <li><a href="#team">Reminders</a></li>
+                <li class="lrv-side-bar">
+                    <a href="{{ route('profile') }}">
+                        <i class="fa fa-btn fa-user ">
+                            {{ __('Profile') }}
+                        </i>
+                    </a>
+                </li>
+                <li class="lrv-side-bar" >
+                    <a href="{{ route('logout') }}">
+                        <i class="fa fa-sign-out">
+                            {{ __('Logout') }}
+                        </i>
+                    </a>
+                </li>
             </div>
         </ul>
     </nav>
