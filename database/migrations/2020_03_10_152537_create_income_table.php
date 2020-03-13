@@ -19,7 +19,7 @@ class CreateIncomeTable extends Migration
             $table->unsignedBigInteger('user_id');
             $table->text('title');
             $table->text('description');
-            $table->enum('category', ['General', 'Loaning', 'Reminder'])->default('General');
+            $table->enum('category', ['Income', 'Monthly Expenses', 'Loaning', 'Reminder'])->default('Income');
             $table->date('date');
 
             $table->foreign('user_id')->references('id')->on('users');

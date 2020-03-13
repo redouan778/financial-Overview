@@ -1,4 +1,7 @@
 @extends('layouts.app')
+@extends('layouts.sidebar')
+@extends('layouts.footer')
+
 @section('content')
     <div class="container">
         <div class="panel panel-default">
@@ -24,16 +27,17 @@
                         <label for="naam"  class="col-sm-2 control-label">Category</label>
                         <div class="col-sm-6">
                             <select name="category">
-                                <option value="general">General</option>
-                                <option value="loaning">Loaning</option>
-                                <option value="reminder">Reminder</option>
+                                <option value="Income">Income</option>
+                                <option value="Loaning">Loaning</option>
+                                <option value="Reminder">Reminder</option>
+                                <option value="Monthly Expenses">Monthly Expenses</option>
                             </select>
                         </div>
                     </div>
 
                     <div class="form-group">
                         <div class="col-sm-offset-2 col-sm-10">
-                            <button type="submit" class="btn btn-primary"><i class="fa fa-plus"></i>Add product</button>
+                            <button type="submit" class="btn white default_button"><i class="fa fa-plus"></i>Add product</button>
                         </div>
                     </div>
                 </form>

@@ -22,11 +22,12 @@ class IncomeController extends Controller
      */
     public function index(Income $income)
     {
-        $general = Income::where('Category', 'General')->get();
-        $loaning = Income::where('Category', 'Loaning')->get();
-        $reminder = Income::where('Category', 'Reminder')->get();
+        $incomes = Income::where('Category', 'Income')->get();
+        $loanings = Income::where('Category', 'Loaning')->get();
+        $reminders = Income::where('Category', 'Reminder')->get();
+        $monthly_expenses = Income::where('Category', 'Monthly Expenses')->get();
 
-        return view('income.index', compact('general',  'loaning', 'reminder'));
+        return view('income.index', compact('incomes',  'loanings', 'reminders', 'monthly_expenses'));
     }
 
     /**
@@ -93,14 +94,12 @@ class IncomeController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Income  $income
-     * @return Response
+     * @param Income $income
+     * @return string
      */
     public function edit(Income $income)
     {
-        //
+        return 'This is the edit page my friend!!';
     }
 
     /**

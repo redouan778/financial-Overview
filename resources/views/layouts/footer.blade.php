@@ -6,7 +6,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="sumit kumar">
-    <title>Trial</title>
 </head>
 
 <body>
@@ -38,29 +37,13 @@
             <div class="col-sm-3">
                 <h4 class="title">Category</h4>
                 <div class="category">
-                    <a href="#">men</a>
-                    <a href="#">women</a>
-                    <a href="#">boy</a>
-                    <a href="#">girl</a>
-                    <a href="#">bag</a>
-                    <a href="#">teshart</a>
-                    <a href="#">top</a>
-                    <a href="#">shos</a>
-                    <a href="#">glass</a>
-                    <a href="#">kit</a>
-                    <a href="#">baby dress</a>
-                    <a href="#">kurti</a>
+                    <a href="#">Incomes</a>
+                    <a href="#">Loaning</a>
+                    <a href="#">Reminder</a>
+                    <a href="#">Profile</a>
+                    <a href="#">Monthly Expenses</a>
+                    <a href="#">Logout</a>
                 </div>
-            </div>
-            <div class="col-sm-3">
-                <h4 class="title">Payment Methods</h4>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                <ul class="payment">
-                    <li><a href="#"><i class="fa fa-cc-amex" aria-hidden="true"></i></a></li>
-                    <li><a href="#"><i class="fa fa-credit-card" aria-hidden="true"></i></a></li>
-                    <li><a href="#"><i class="fa fa-paypal" aria-hidden="true"></i></a></li>
-                    <li><a href="#"><i class="fa fa-cc-visa" aria-hidden="true"></i></a></li>
-                </ul>
             </div>
         </div>
         <hr>

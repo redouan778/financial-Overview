@@ -1,7 +1,6 @@
 body {
     position: relative;
     overflow-x: hidden;
-    /*background-image: url("image/bg.jpg");*/
     background-image: url('../image/bg.jpg');
 }
 body,
@@ -64,6 +63,11 @@ html { height: 100%;}
 /*-------------------------------*/
 .navbar {
     padding: 0;
+    border-bottom: 4px white solid;
+    position: fixed;
+    width: 100%;
+    opacity: 120%;
+    background: #2c3640;
 }
 
 .sidebar-nav {
@@ -343,18 +347,20 @@ a[href*="#followme"]::before {
     padding-top: 60px;
 }
 
-.add_button{
+.default_button{
+    color: white;
+    background-color: unset;
+    border: 3px solid white;
     color: white;
 }
 
-#add_button{
-    /*float: right;*/
-    /*display: inline-block;*/
+.white:hover{
+    color: white;
 }
+
 .previous-button{
     margin-top: 5%;
 }
-
 
 /*
 	Side Navigation Menu V2, RWD
@@ -404,6 +410,10 @@ h2 a {
 
 .blue { color: #185875; }
 .yellow { color: #FFF842; }
+
+.py-4{
+    margin-top: 3%;
+}
 
 .container th h1 {
     font-weight: bold;
@@ -526,6 +536,8 @@ h2 a {
     background-color: #35404f;
     color: #878c94;
 }
+
+
 .footer .title{text-align: left;color:#fff;font-size:25px;}
 
 
@@ -591,6 +603,9 @@ h2 a {
         display: none;
         background: red;
     }
+    .add{
+        margin-bottom: 3em;
+    }
 }
 
 @media (max-width: 446px) {
@@ -598,5 +613,165 @@ h2 a {
         font-size: 0.65em;
     }
 }
+/*//////////////////////////*/
 
+.test1 {
+    padding: 0;
+    list-style-type: none;
+}
 
+.test2 {
+    /*width: 20rem;*/
+    /*height: 7rem;*/
+    /*font-size: 20px;*/
+    /*text-align: center;*/
+    /*line-height: 7rem;*/
+    /*font-family: sans-serif;*/
+    /*text-transform: uppercase;*/
+    /*letter-spacing: 1px;*/
+    /*position: relative;*/
+    /*z-index: 1;*/
+    /*transition: 0.3s;*/
+    /*margin: 3rem;*/
+
+    width: 150px;
+    height: 50px;
+    font-size: 10px;
+    text-align: center;
+    line-height: 5em;
+    font-family: "Script MT Bold";
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+    z-index: 1;
+    transition: 0.3s;
+}
+
+.test2::before,
+.test2::after {
+    content: '';
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    top: 0;
+    left: 0;
+    transition: 0.3s;
+}
+
+.test2::before {
+    background-color: white;
+    z-index: -1;
+    box-shadow: 0.2rem 0.2rem 0.5rem rgba(0, 0, 0, 0.2);
+}
+
+.test2::after {
+    background-color: goldenrod;
+    transform: translate(1.5rem, 1.5rem);
+    z-index: -2;
+}
+
+.test2:hover {
+    transform: translate(1.5rem, 1.5rem);
+    color: white;
+}
+
+.test2:hover::before {
+    background-color: goldenrod;
+}
+
+.test2:hover::after {
+    background-color: white;
+    transform: translate(-1.5rem, -1.5rem);
+}
+
+/*////////////////////////////////////////////// */
+
+@import url("https://fonts.googleapis.com/css?family=Merriweather");
+/*body {*/
+/*    padding: 120px;*/
+/*    background-color: #0D324D;*/
+/*    text-align: center;*/
+/*}*/
+
+.button {
+    padding: 20px 30px;
+    font-size: 40px;
+    cursor: pointer;
+    position: relative;
+    border: 2px solid white;
+    outline: none;
+    color: black;
+    background-color: transparent;
+    margin: 0.7em;
+    font-family: 'Merriweather', serif;
+    white-space: nowrap;
+}
+
+.btn--future::after, .btn--future::before {
+    content: "";
+    position: absolute;
+    border: 2px solid white;
+    width: calc(100% + 15px);
+    height: 60px;
+    transition: 0.5s ease;
+}
+
+.btn--future::after {
+    top: -10px;
+    left: -12px;
+    width: 149px;
+    height: 49px;
+    border-right: none;
+    border-bottom: none;
+}
+.btn--future::before {
+    bottom: -9px;
+    right: -10px;
+    width: 151px;
+    height: 48px;
+    border-left: none;
+    border-top: none;
+}
+
+.btn--future:hover:after, .btn--future:hover:before {
+    width: calc(100% - 113px);
+    height: 35px;
+}
+
+.nav-bar-name {
+    color: white;
+    text-transform: uppercase;
+    font-size: 24px;
+    margin-top: -2px;
+}
+
+.nav-bar-inside-border-name{
+    border: 5px solid black;
+    height: 20px;
+    font-family: 'Merriweather', serif;
+    text-align: center;
+}
+
+.delete-button{
+    color: red;
+}
+
+.user_btn{
+    height: 40px;
+}
+
+.black{
+    color: black;
+}
+
+.white{
+    color: white;
+}
+
+.red{
+    color: red;
+}
+
+.actions{
+    display: inline-block;
+}

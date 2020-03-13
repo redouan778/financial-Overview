@@ -1,7 +1,9 @@
 @extends('layouts.app')
+@extends('layouts.sidebar')
+@extends('layouts.footer')
 
 @section('content')
-    <div class="container">
+    <div class="container p">
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
                 <img  src="/image/{{ $user->avatar }}" style="width:150px; height:150px; float:left; border-radius:50%; margin-right:25px;">
