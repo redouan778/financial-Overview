@@ -411,10 +411,6 @@ h2 a {
 .blue { color: #185875; }
 .yellow { color: #FFF842; }
 
-.py-4{
-    margin-top: 3%;
-}
-
 .container th h1 {
     font-weight: bold;
     font-size: 1em;
@@ -774,4 +770,8 @@ h2 a {
 
 .actions{
     display: inline-block;
+}
+
+.py-4{
+    margin-top: 3%;
 }

@@ -43,12 +43,12 @@
                         <!-- Authentication Links -->
 
                         @guest
-                            <li class="nav-bar-inside-border-name nav-item button user_btn btn--future">
-                                <a class="nav-link lrv-bar" href="{{ route('login') }}">{{ __('Login') }}</a>
-                            </li>
-                            @if (Route::has('register'))
                                 <li class="nav-bar-inside-border-name nav-item button user_btn btn--future">
-                                    <a class="nav-link lrv-bar" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    <div class="nav-bar-name">       <a class="nav-link lrv-bar" href="{{ route('login') }}">{{ __('Login') }}</a></div>
+                                </li>
+                           @if (Route::has('register'))
+                                <li class="nav-bar-inside-border-name nav-item button user_btn btn--future">
+                                    <div class="nav-bar-name">   <a class="nav-link lrv-bar" href="{{ route('register') }}">{{ __('Register') }}</a></div>
                                 </li>
                             @endif
                         @else
